@@ -3,47 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Alumni Login</title>
-<!--	<link rel="stylesheet" type="text/css" href="Thrift and Gift Template.css"> -->
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="js/index.js" type="text/javascript"></script>
 	<noscript><p>This page requires javaScript to run correctly!</p></noscript>
 </head>
 <body onload="main()">
-	
-	<h1>Sign In</h1>
 
-<form action="php/signIn.php" method="post">
-  		Email: <input type="text" name="email"><br><br>
-  		Password: <input type="password" name="password"><br><br>
-  		<input type="submit" name="signin" value="Sign In">
+<img src="TitanCardBackgrounds/loginBanner.png" alt="loginBanner.jpg">
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'signIn')" id="defaultOpen">Sign In</button>
+  <button class="tablinks" onclick="openCity(event, 'register')">Register</button>
+</div>
+
+<div id="signIn" class="tabcontent">
+
+    <form action="php/signIn.php" method="post" class="log-in">
+    	<table align="center">
+    		<tr><td>Email:</td><td><input type="text" name="email"></td></tr>
+    		<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+		</table>
+		<input type="submit" name="signin" id="submit" value="Sign In">
 	</form>
+</div>
 
-	<br>
+<div id="register" class="tabcontent">
 
-	<h1>Register</h1>
-
-<form action="php/register.php" method="post">
-  		First Name: <input type="text" name="firstName" id="5"> 
-  		Last Name: <input type="text" name="lastName"><br><br>
-  		College Attended: <select name="collegeAttended">
+	<form action="php/register.php" method="post">
+		
+    	First Name:<input type="text" name="firstName">
+    	Last Name:<input type="text" name="lastName"><br><br>
+    	College Attended:<select name="collegeAttended">
   							<option value="College of Business">College of Business</option>
   						  	<option value="College of Education and Human Services">College of Education and Human Services</option>
  							<option value="College of Letters and Science">College of Letters and Science</option>
   							<option value="College of Nursing">College of Nursing</option>
-						  </select><br><br>
-  		Graduation Year: <select id="yearDropDown" class="" name="graduationYear" 
-  						         style="width: 5%; display:inline-block;" value="">   	
-  						 </select><br><br>
-  		Email: <input type="text" name="email"><br><br>
-  		Password: <input type="password" name="password"><br><br>
-  		Re-enter password: <input type="password" name="confirmPassword"><br><br>
+						 </select>
+		Graduation Year:<select id="yearDropDown" class="" name="graduationYear" 
+  						        style="width: 70px; display:inline-block;" value="">   	
+  						</select><br><br>
+			
+		<table align="center">
+    		<tr><td>Email:</td><td><input type="text" name="email"></td></tr>
+    		<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+    		<tr><td>Re-enter Password:</td><td><input type="password" name="confirmPassword"></td></tr>
+		</table>	
   		<input type="submit" name="register" value="Register">
 	</form>
-
-
-
-
+</div>
+	
 </body>
 </html>
-
-<!--> <script src="js/tabs.js" type="text/javascript"></script>
-	  <link rel="stylesheet" href="css/LoginPage.css"> </!-->
