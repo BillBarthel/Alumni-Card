@@ -4,8 +4,16 @@
 	<title>Alumni Titan card</title>
 </head>
 <body>
-<img src="../TitanCardBackgrounds/alumniCard1.png" alt="Mountain View"><!-- style="width:304px;height:228px;"> -->
-<br>
+
+<?php
+$backgroundImage = $_GET["backgroundImage"];
+if($backgroundImage == 0)
+	echo "<img src=\"../TitanCardBackgrounds/COBAlumniCard.jpg\" alt=\"COBAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+else if($backgroundImage == 1)
+	echo "<img src=\"../TitanCardBackgrounds/ClashAlumniCard.jpg\" alt=\"ClashAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+else
+	echo "<img src=\"../TitanCardBackgrounds/ScapeAlumniCard.jpg\" alt=\"ScapeAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+?>
 <?php
 echo htmlspecialchars($_GET["alumnusID"]);
 ?>
@@ -27,11 +35,19 @@ echo htmlspecialchars($_GET["graduationYear"]);
 ?>
 <br>
 <?php
-echo htmlspecialchars($_GET["qrCode"] . "\$qrCode");
+if(!htmlspecialchars($_GET["alumnPhoto"])){
+	echo "QR code not yet generated";
+} else {
+	echo "Generated QR code should display here";
+}
 ?>
 <br>
 <?php
-echo htmlspecialchars($_GET["alumnPhoto"]) . "\$alumnPhoto";
+if(!htmlspecialchars($_GET["alumnPhoto"])){
+	echo "Personal photo not yet uploaded";
+} else {
+	echo "Uploaded personal photo should display here";
+}
 ?>
 </body>
 </html>

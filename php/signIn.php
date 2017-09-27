@@ -31,6 +31,7 @@ if($result->num_rows != 0)
 	$graduationYear = $row["GraduationYear"];
 	$qrCode = $row["QRCode"];
 	$alumnPhoto = $row["AlumnPhoto"];
+	$backgroundImage = $row["BackgroundImage"];
 }
 else
 {
@@ -40,14 +41,14 @@ else
 
 if(crypt($password, $SALT) === $dbpassword)
 {
-	header("Location: alumnicard.php?alumnusID=$alumnusID&firstName=$firstName&lastName=$lastName&collegeAttended=$collegeAttended&graduationYear=$graduationYear&qrCode=$qrCode&alumnPhoto=$alumnPhoto");
+	//Transfer data differently. This is really poor.
+	header("Location: alumnicard.php?alumnusID=$alumnusID&firstName=$firstName&lastName=$lastName&collegeAttended=$collegeAttended&graduationYear=$graduationYear&qrCode=$qrCode&alumnPhoto=$alumnPhoto&backgroundImage=$backgroundImage");
 }
 else
 {
 	echo "Invalid username or password.";
 	die();
 }
-
 
 $conn->close();
 
