@@ -35,7 +35,6 @@ if(trim($firstName) == false ||
 } else if(strcmp($password, $passwordConfirmed) != 0){
 	echo "Passwords do no match.";
 } else {//Insert user into database
-	//$conn = mysqli_connect($servername, $username, $dbpassword, $database);
 	if(!$conn){
 		die("Connection failed : " . mysqli_connect_error());
 	}
@@ -72,28 +71,3 @@ if(trim($firstName) == false ||
 }
 
 mysqli_close($conn);
-
-/*
-$conn = new mysqli($servername, $username, $dbpassword);
-// Check connection
-if ($conn->connect_error) {
-   die("Connection failed: " . $conn->connect_error);
-}
-
-
-
-$sql = "INSERT INTO '$database' ('id', 'email', 'password') VALUES ('', '$email', '$cryptPass')";
-
-//Check for duplicate data and various other things
-
-if ($conn->query($sql) === TRUE) {
-    header('Location: ../yourcard.html');
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error . "<br>" . $cryptPass;
-}
-
-$conn->close();
-?>
-
-INSERT INTO UWOAlumniCardUsers (id, email, password) VALUES ('', 'bill', 'pass');
-*/
