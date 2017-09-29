@@ -2,52 +2,36 @@
 <html>
 <head>
 	<title>Alumni Titan card</title>
+	<link rel="stylesheet" type="text/css" href="../css/alumnicard.css">
+	<noscript><p>This page requires javaScript to run correctly!</p></noscript>
 </head>
 <body>
 
 <?php
 $backgroundImage = $_GET["backgroundImage"];
 if($backgroundImage == 0)
-	echo "<img src=\"../TitanCardBackgrounds/COBAlumniCard.jpg\" alt=\"COBAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+	$img = "COBAlumniCardTemplate.jpg";
 else if($backgroundImage == 1)
-	echo "<img src=\"../TitanCardBackgrounds/ClashAlumniCard.jpg\" alt=\"ClashAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+	$img = "ClashAlumniCardTemplate.jpg";
 else
-	echo "<img src=\"../TitanCardBackgrounds/ScapeAlumniCard.jpg\" alt=\"ScapeAlumniCard.jpg\" height=\"360px\" width=\"577\"><br>";
+	$img = "ScapeAlumniCardTemplate.jpg";
 ?>
-<?php
-echo htmlspecialchars($_GET["alumnusID"]);
-?>
-<br>
-<?php
-echo htmlspecialchars($_GET["firstName"]);
-?>
-<br>
-<?php
-echo htmlspecialchars($_GET["lastName"]);
-?>
-<br>
-<?php
-echo htmlspecialchars($_GET["collegeAttended"]);
-?>
-<br>
-<?php
-echo htmlspecialchars($_GET["graduationYear"]);
-?>
-<br>
-<?php
-if(!htmlspecialchars($_GET["alumnPhoto"])){
-	echo "QR code not yet generated";
-} else {
-	echo "Generated QR code should display here";
-}
-?>
-<br>
-<?php
-if(!htmlspecialchars($_GET["alumnPhoto"])){
-	echo "Personal photo not yet uploaded";
-} else {
-	echo "Uploaded personal photo should display here";
-}
-?>
+
+<div class="container">
+  <img src="../Images/TitanCardBackgrounds/<?php echo $img; ?>" height="400px" width="600"/>
+  <div class="bottom-left">
+	<table style="width:100%">
+  		<tr>
+   		 	<td><?php echo htmlspecialchars($_GET["firstName"]); ?>
+    		<?php echo htmlspecialchars($_GET["lastName"]); ?>
+   			<?php echo "'" . substr($_GET["graduationYear"], -2); ?></td>
+  		</tr>
+  		<tr>
+    		<td><?php echo htmlspecialchars($_GET["collegeAttended"]); ?></td>
+  		</tr>
+	</table>
+  </div>
+</div>
+
 </body>
 </html>
