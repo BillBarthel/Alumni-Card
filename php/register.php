@@ -66,6 +66,7 @@ if(trim($firstName) == false ||
 			$_SESSION["lastname"] = $lastName;
 			$_SESSION["collegeattended"] = $collegeAttended;
 			$_SESSION["graduationyear"] = $graduationYear;
+			$_SESSION['alumnphoto'] = "default.jpg";
 
 			header("Location: ../selectbackground.html");
 		} else {

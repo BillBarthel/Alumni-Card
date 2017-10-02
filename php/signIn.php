@@ -33,7 +33,7 @@ if($result->num_rows != 0)
 	$_SESSION["collegeattended"] = $row["CollegeAttended"];
 	$_SESSION["graduationyear"] = $row["GraduationYear"];
 	//$_SESSION['qrcode'] = $row["QRCode"];
-	//$_SESSION['alumnphoto'] = $row["AlumnPhoto"];
+	$_SESSION['alumnphoto'] = $row["AlumnPhoto"];
 	$_SESSION['background'] = $row["BackgroundImage"];
 }
 else

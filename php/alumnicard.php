@@ -7,6 +7,8 @@ else if($backgroundImage == 2)
   $img = "COBAlumniCardTemplate.jpg";
 else
   $img = "ScapeAlumniCardTemplate.jpg";
+
+$alumnphoto = $_SESSION['alumnphoto']
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +21,7 @@ else
 <body>
 
 <div class="container">
-  <img src="../Images/TitanCardBackgrounds/<?php echo $img; ?>" height="400px" width="600"/>
+  <img src="../Images/TitanCardBackgrounds/<?php echo $img; ?>" height="400px" width="600"/>  
   <div class="bottom-left">
 	<table style="width:100%">
   		<tr>
@@ -40,6 +42,8 @@ else
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
 </form>
+
+<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
 
 </body>
 </html>

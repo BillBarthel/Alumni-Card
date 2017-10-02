@@ -47,7 +47,15 @@ if ($uploadOk == 0) {
 	$extension=end($temp);
 	$newfilename=$_SESSION["username"] .".".$extension;
 
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $newfilename)) {
+    $email = $_SESSION['email'];
+    $servername = "localhost";
+    $database = "alumni_card";
+    $username = "root";
+    $dbpassword = "";
+    $conn = mysqli_connect($servername, $username, $dbpassword, $database);
+    $sql = "UPDATE registered_alumni SET AlumnPhoto ='$newfilename' WHERE Email = '$email'";
+
+    if (mysqli_query($conn, $sql) && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $newfilename)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
