@@ -1,5 +1,12 @@
 <?php
 session_start();
+$backgroundImage = $_SESSION["background"];
+if($backgroundImage == 1)
+  $img = "ClashAlumniCardTemplate.jpg";
+else if($backgroundImage == 2)
+  $img = "COBAlumniCardTemplate.jpg";
+else
+  $img = "ScapeAlumniCardTemplate.jpg";
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +17,6 @@ session_start();
 	<noscript><p>This page requires javaScript to run correctly!</p></noscript>
 </head>
 <body>
-
-<?php
-
-$backgroundImage = $_SESSION["background"];
-if($backgroundImage == 1)
-	$img = "ClashAlumniCardTemplate.jpg";
-else if($backgroundImage == 2)
-	$img = "COBAlumniCardTemplate.jpg";
-else
-	$img = "ScapeAlumniCardTemplate.jpg";
-?>
 
 <div class="container">
   <img src="../Images/TitanCardBackgrounds/<?php echo $img; ?>" height="400px" width="600"/>
@@ -37,6 +33,13 @@ else
 	</table>
   </div>
 </div>
+
+<br>
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
 
 </body>
 </html>

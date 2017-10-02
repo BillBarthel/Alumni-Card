@@ -60,6 +60,7 @@ if(trim($firstName) == false ||
 
 			//initialize session variables
 			$_SESSION["alumnusid"] = $alumnusID;
+			$_SESSION["username"] = $checkEmail[0];
 			$_SESSION['email'] = $email;
 			$_SESSION["firstname"] = $firstName;
 			$_SESSION["lastname"] = $lastName;
