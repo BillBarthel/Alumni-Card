@@ -1,5 +1,5 @@
 <?php
-//$cookieName = "loggedIn";
+session_start();
 //double check credentials
 //May look more elegant if put into an array
 $firstName = htmlspecialchars($_POST["firstName"], ENT_QUOTES);
@@ -53,15 +53,22 @@ if(trim($firstName) == false ||
 
 		if (mysqli_query($conn, $sql)) {
 			//Get newly registered AlumnusID to display on alumnicard.php
-			$sql = "SELECT AlumnusID, BackgroundImage FROM registered_alumni WHERE Email = '$email'";
+			$sql = "SELECT AlumnusID FROM registered_alumni WHERE Email = '$email'";
 			$result = $conn->query($sql);
 			$row = $result->fetch_assoc();
 			$alumnusID = $row["AlumnusID"];
-			$backgroundImage = $row["BackgroundImage"];
 
-    		//Transfer data differently. This is really poor.
-			header("Location: alumnicard.php?alumnusID=$alumnusID&firstName=$firstName&lastName=$lastName&collegeAttended=$collegeAttended&graduationYear=$graduationYear&qrCode=$qrCode&alumnPhoto=$alumnPhoto&backgroundImage=$backgroundImage");
+			//initialize session variables
+			$_SESSION["alumnusid"] = $alumnusID;
+			$_SESSION['email'] = $email;
+			$_SESSION["firstname"] = $firstName;
+			$_SESSION["lastname"] = $lastName;
+			$_SESSION["collegeattended"] = $collegeAttended;
+			$_SESSION["graduationyear"] = $graduationYear;
+
+			header("Location: ../selectbackground.html");
 		} else {
+			echo "Somthing went wrong. Cannot register at this time.";
     		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
 	} else {
@@ -71,3 +78,5 @@ if(trim($firstName) == false ||
 }
 
 mysqli_close($conn);
+
+?>

@@ -2,7 +2,6 @@
 
 $email = htmlspecialchars($_POST["email"], ENT_QUOTES);
 $password = htmlspecialchars($_POST["password"], ENT_QUOTES);
-//$passwordConfirmed = htmlspecialchars($_POST["passwordConfirmed"], ENT_QUOTES);
 
 $SALT = "z978nfNMzx83bvb2xDv74G4";
 

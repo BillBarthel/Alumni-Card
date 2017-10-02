@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +12,12 @@
 <body>
 
 <?php
-$backgroundImage = $_GET["backgroundImage"];
-if($backgroundImage == 0)
-	$img = "COBAlumniCardTemplate.jpg";
-else if($backgroundImage == 1)
+
+$backgroundImage = $_SESSION["background"];
+if($backgroundImage == 1)
 	$img = "ClashAlumniCardTemplate.jpg";
+else if($backgroundImage == 2)
+	$img = "COBAlumniCardTemplate.jpg";
 else
 	$img = "ScapeAlumniCardTemplate.jpg";
 ?>
@@ -22,12 +27,12 @@ else
   <div class="bottom-left">
 	<table style="width:100%">
   		<tr>
-   		 	<td><?php echo htmlspecialchars($_GET["firstName"]); ?>
-    		<?php echo htmlspecialchars($_GET["lastName"]); ?>
-   			<?php echo "'" . substr($_GET["graduationYear"], -2); ?></td>
+   		 	<td><?php echo $_SESSION["firstname"]; ?>
+    		<?php echo $_SESSION["lastname"]; ?>
+   			<?php echo "'" . substr($_SESSION["graduationyear"], -2); ?></td>
   		</tr>
   		<tr>
-    		<td><?php echo htmlspecialchars($_GET["collegeAttended"]); ?></td>
+    		<td><?php echo $_SESSION["collegeattended"]; ?></td>
   		</tr>
 	</table>
   </div>
