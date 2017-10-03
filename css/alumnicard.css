@@ -1,3 +1,30 @@
+.clashbackground {
+    position: relative;
+    background-size: 600px 400px;
+    height: 400px;
+    width: 600px;
+    background-repeat: no-repeat;
+    background-image: url("../Images/TitanCardBackgrounds/ClashAlumniCardTemplate.jpg");
+}
+
+.cobbackground {
+    position: relative;
+    background-size: 600px 400px;
+    height: 400px;
+    width: 600px;
+    background-repeat: no-repeat;
+    background-image: url("../Images/TitanCardBackgrounds/COBAlumniCardTemplate.jpg");
+}
+
+.scapebackground {
+    position: relative;
+    background-size: 600px 400px;
+    height: 400px;
+    width: 600px;
+    background-repeat: no-repeat;
+    background-image: url("../Images/TitanCardBackgrounds/ScapeAlumniCardTemplate.jpg");
+}
+
 /* Container holding the image and the text */
 .container {
     height: 400px;
@@ -6,8 +33,6 @@
     text-align: center;
     color: white;
 }
-
-
 
 /* Bottom left text */
 .bottom-left {
@@ -46,4 +71,26 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.clash-center-left{
+    position: absolute;
+    left: 16px;
+    top: 17%;
+}
+
+.cob-center-left{
+    position: absolute;
+    left: 36px;
+    top: 22%;
+}
+
+.scape-center-left{
+    position: absolute;
+    left: 16px;
+    top: 30%;
+}
+
+img{
+    border: 2px solid #021a40
 }

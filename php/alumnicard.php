@@ -20,6 +20,35 @@ $alumnphoto = $_SESSION['alumnphoto']
 </head>
 <body>
 
+<?php if($backgroundImage == 1)://clash ?>
+<div class="clashbackground">
+	<div class="clash-center-left">
+		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+	</div>
+</div>
+
+<?php elseif($backgroundImage == 2)://COB ?>
+<div class="cobbackground">
+	<div class="cob-center-left">
+		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+	</div>
+</div>
+
+<?php else://Scape ?>
+<div class="scapebackground">
+	<div class="scape-center-left">
+		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+	</div>
+</div>
+
+<?php endif; ?>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
   <img src="../Images/TitanCardBackgrounds/<?php echo $img; ?>" height="400px" width="600"/>  
   <div class="bottom-left">
