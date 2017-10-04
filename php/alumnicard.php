@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+    header("Location: ../index.html");
+
 $backgroundImage = $_SESSION["background"];
 if($backgroundImage == 1)
   $img = "ClashAlumniCardTemplate.jpg";
@@ -165,6 +168,10 @@ $alumnphoto = $_SESSION['alumnphoto']
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
+</form><br>
+
+<form action="logout.php" method="post" enctype="multipart/form-data">
+    <input type="submit" value="Log Out" name="logout">
 </form>
 
 </body>

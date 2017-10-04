@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+    header("Location: ../index.html");
 
 $email = $_SESSION['email'];
 $backgroundImage = $_SESSION['background'] = $_POST["background"];

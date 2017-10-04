@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION["email"]))
+    header("Location: ../index.html");
 
 $target_dir = "../Images/Uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
