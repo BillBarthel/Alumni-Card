@@ -24,10 +24,17 @@ if($result->num_rows != 0)
 {
 	$row = $result->fetch_assoc();
 	$dbpassword = $row["Password"];
+	$id = $row["AlumnusID"];
+	$idLength = strlen(strval($id));
+	$numPaddedZeros = 7 - $idLength;
+	for ($i=0; $i <$numPaddedZeros ; $i++) { 
+		$paddedId = $paddedId . "0";
+	}
+	$paddedId .= strval($id);
+	$_SESSION["alumnusid"] = $paddedId;
 	$_SESSION['email'] = $email;
 	$checkEmail = explode("@", $email);
 	$_SESSION["username"] = $checkEmail[0];
-	$_SESSION["alumnusid"] = $row["AlumnusID"];
 	$_SESSION["firstname"] = $row["FirstName"];
 	$_SESSION["lastname"] = $row["LastName"];
 	$_SESSION["collegeattended"] = $row["CollegeAttended"];

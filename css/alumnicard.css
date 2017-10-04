@@ -1,3 +1,7 @@
+td{
+    width: 400px;
+}
+
 .clashbackground {
     position: relative;
     background-size: 600px 400px;
@@ -39,9 +43,9 @@
     color: white;
     position: absolute;
     text-align: left;
-    font-size: 24pt; 
-    bottom: 8px;
-    left: 16px;
+    font-size: 12pt; 
+    bottom: 12px;
+    left: 24px;
 }
 
 /* Top left text */
