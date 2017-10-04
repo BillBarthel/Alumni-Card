@@ -1,10 +1,10 @@
+.header{
+    width: 100%;
+}
+
 body {
     background-color: #444444;
     text-align: center;
-}
-
-img {
-    margin-top: 0;
 }
 
 td{
@@ -19,7 +19,7 @@ input, select{
 /* Style the tab */
 div.tab {
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: 33%;
     overflow: hidden;
     text-align: center;
     width: 625px;
@@ -52,7 +52,7 @@ div.tab button.active {
 
 /* Style the tab content */
 .tabcontent {
-    margin-left: 100px;
+    margin-left: 33%;
     float: center;
     background-color: #ffc72c;
     display: none;
