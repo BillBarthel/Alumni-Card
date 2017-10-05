@@ -1,7 +1,45 @@
+#background{
+    position: absolute;
+    float: left;
+}
+
+#forground{
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+body {
+    background-color: #444444;
+    
+    margin: 0;
+    padding: 0;
+}
+
+form{
+	text-align: center;
+	margin: 100px auto auto auto;
+}
+
+h1{
+	color: #ffc72c;
+}
+
 .buttongroup{
     display:inline-block;
     text-align:center;
 }
 .buttongroup label {
     display:block;
+}
+
+#button{
+    transition-duration: 0.4s;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+}
+
+#button:hover{
+    background-color: #ffc72c;
 }
