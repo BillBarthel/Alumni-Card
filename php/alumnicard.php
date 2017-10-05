@@ -7,7 +7,7 @@ $backgroundImage = $_SESSION["background"];
 if($backgroundImage == 1)
   $img = "ClashAlumniCardTemplate.jpg";
 else if($backgroundImage == 2)
-  $img = "COBAlumniCardTemplate.jpg";
+  $img = "Picture4.png";
 else
   $img = "ScapeAlumniCardTemplate.jpg";
 
