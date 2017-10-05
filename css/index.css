@@ -1,10 +1,19 @@
-.header{
-    width: 100%;
+#background{
+    position: absolute;
+    float: left;
+}
+
+#forground{
+    position: relative;
+    display: block;
+    margin: auto;
 }
 
 body {
     background-color: #444444;
-    text-align: center;
+    
+    margin: 0;
+    padding: 0;
 }
 
 td{
@@ -18,8 +27,7 @@ input, select{
 
 /* Style the tab */
 div.tab {
-    margin-top: 100px;
-    margin-left: 33%;
+    margin: 100px auto auto auto;
     overflow: hidden;
     text-align: center;
     width: 625px;
@@ -52,7 +60,8 @@ div.tab button.active {
 
 /* Style the tab content */
 .tabcontent {
-    margin-left: 33%;
+    text-align: center;
+    margin: 0px auto auto auto;
     float: center;
     background-color: #ffc72c;
     display: none;
