@@ -9,6 +9,18 @@
     margin: auto;
 }
 
+#button{
+    background-color: white;
+    transition-duration: 0.4s;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+}
+
+#button:hover{
+    background-color: #ddd;
+}
+
 body {
     background-color: #444444;
     
