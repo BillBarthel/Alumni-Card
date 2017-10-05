@@ -26,10 +26,15 @@ $alumnphoto = $_SESSION['alumnphoto']
 </head>
 <body>
 
+<div class="header">
+  <img id="background" src="../Images/Other/Gradiant.jpg" alt="loginBanner.jpg" width="100%" height="150px">
+  <img id="forground" src="../Images/Other/Logo.png" alt="loginBanner.jpg" height="150px">
+</div>
+
 <?php if($backgroundImage == 1)://clash ?>
-<div class="clashbackground">
+<div class="clashbackground" id="alumnicard">
 	<div class="clash-center-left">
-		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -68,12 +73,11 @@ $alumnphoto = $_SESSION['alumnphoto']
   	<?php endif; ?>
 	</table>
 </div>
-<tr>
    
 
 
 <?php elseif($backgroundImage == 2)://COB ?>
-<div class="cobbackground">
+<div class="cobbackground" id="alumnicard">
 	<div class="cob-center-left">
 		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
 	</div>
@@ -118,7 +122,7 @@ $alumnphoto = $_SESSION['alumnphoto']
 
 
 <?php else://Scape ?>
-<div class="scapebackground">
+<div class="scapebackground" id="alumnicard">
 	<div class="scape-center-left">
 		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
 	</div>
@@ -160,19 +164,20 @@ $alumnphoto = $_SESSION['alumnphoto']
 	</table>
 
 </div>
-
 <?php endif; ?>
 
 <br>
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<div id="upload">
+  <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
     <input type="file" name="fileToUpload" id="fileToUpload">
     <input type="submit" value="Upload Image" name="submit">
-</form><br>
-
-<form action="logout.php" method="post" enctype="multipart/form-data">
-    <input type="submit" value="Log Out" name="logout">
 </form>
+<br>
+<form id="logout" action="logout.php" method="post" enctype="multipart/form-data">
+    <input id="button" type="submit" value="Log Out" name="logout">
+</form>
+</div>
 
 </body>
 </html>

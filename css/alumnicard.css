@@ -1,3 +1,45 @@
+body {
+    background-color: #444444;
+    
+    margin: 0;
+    padding: 0;
+}
+
+#alumnicard{
+    margin: 100px auto auto auto;
+}
+
+#upload{
+    color: white;
+    text-align: center;
+}
+
+#logout{
+    margin: 0 auto;
+}
+
+#button{
+    transition-duration: 0.4s;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 12px;
+}
+
+#button:hover{
+    background-color: #ffc72c;
+}
+
+#background{
+    position: absolute;
+    float: left;
+}
+
+#forground{
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
 td{
     width: 400px;
 }
@@ -95,6 +137,6 @@ td{
     top: 30%;
 }
 
-img{
+#profilephoto{
     border: 2px solid #021a40
 }
