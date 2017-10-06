@@ -20,8 +20,7 @@ if(!$conn){
 $sql = "SELECT * FROM registered_alumni WHERE Email = '$email'";
 $result = $conn->query($sql);
 
-if($result->num_rows != 0)
-{
+if($result->num_rows != 0){
 	$row = $result->fetch_assoc();
 	$dbpassword = $row["Password"];
 	$id = $row["AlumnusID"];
@@ -42,19 +41,14 @@ if($result->num_rows != 0)
 	//$_SESSION['qrcode'] = $row["QRCode"];
 	$_SESSION['alumnphoto'] = $row["AlumnPhoto"];
 	$_SESSION['background'] = $row["BackgroundImage"];
-}
-else
-{
+}else{
 	echo "Invalid username or password.";
 	die();
 }
 
-if(crypt($password, $SALT) === $dbpassword)
-{
+if(crypt($password, $SALT) === $dbpassword){
 	header("Location: alumnicard.php");
-}
-else
-{
+}else{
 	echo "Invalid username or password.";
 	die();
 }

@@ -49,7 +49,10 @@ if(trim($firstName) == false ||
 		$lastName = strtoupper($lastName);
 		$collegeAttended = strtoupper($collegeAttended);
 
-		$sql = "INSERT INTO registered_alumni (AlumnusID, Email, Password, FirstName, LastName, CollegeAttended, GraduationYear) VALUES ('', '$email', '$cryptPass', '$firstName', '$lastName', '$collegeAttended', '$graduationYear')";
+		$sql = "INSERT INTO registered_alumni (AlumnusID, Email, Password, 
+							FirstName, LastName, CollegeAttended, GraduationYear) 
+							VALUES ('', '$email', '$cryptPass', '$firstName', 
+							'$lastName', '$collegeAttended', '$graduationYear')";
 
 		if (mysqli_query($conn, $sql)) {
 			//Get newly registered AlumnusID to display on alumnicard.php
