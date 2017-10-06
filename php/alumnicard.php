@@ -22,7 +22,8 @@ $alumnphoto = $_SESSION['alumnphoto']
 <head>
 	<title>Alumni Titan card</title>
 	<link rel="stylesheet" type="text/css" href="../css/alumnicard.css">
-	<noscript><p>This page requires javaScript to run correctly!</p></noscript>
+	<script src="js/alumnicard.js" type="text/javascript"></script>
+  <noscript><p>This page requires javaScript to run correctly!</p></noscript>
 </head>
 <body>
 
@@ -34,7 +35,7 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php if($backgroundImage == 1)://clash ?>
 <div class="clashbackground" id="alumnicard">
 	<div class="clash-center-left">
-		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -79,7 +80,7 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php elseif($backgroundImage == 2)://COB ?>
 <div class="cobbackground" id="alumnicard">
 	<div class="cob-center-left">
-		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -124,7 +125,7 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php else://Scape ?>
 <div class="scapebackground" id="alumnicard">
 	<div class="scape-center-left">
-		<img src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -175,7 +176,7 @@ $alumnphoto = $_SESSION['alumnphoto']
 </form>
 <br>
 <form id="logout" action="logout.php" method="post" enctype="multipart/form-data">
-    <input id="button" type="submit" value="Log Out" name="logout">
+    <input onclick="updatePhoto()" id="button" type="submit" value="Log Out" name="logout">
 </form>
 </div>
 

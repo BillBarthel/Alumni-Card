@@ -39,7 +39,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    header("Location: alumnicard.php");
 // if everything is ok, try to upload file
 } else {
 	echo "<br>";
@@ -56,9 +56,10 @@ if ($uploadOk == 0) {
     $dbpassword = "";
     $conn = mysqli_connect($servername, $username, $dbpassword, $database);
     $sql = "UPDATE registered_alumni SET AlumnPhoto ='$newfilename' WHERE Email = '$email'";
-
-    if (mysqli_query($conn, $sql) && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir . $newfilename)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+    if (mysqli_query($conn, $sql) && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],
+                                                        $target_dir . $newfilename)) {
+        $_SESSION["alumnphoto"] = $newfilename;
+        header("Location: alumnicard.php");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
