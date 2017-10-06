@@ -45,6 +45,7 @@ div.tab {
     width: 625px;
     padding: 6px 12px;
     border: 1px solid #ccc;
+    border-bottom: none;
     border-radius: 25px 25px 0px 0px;
     background-color: #ffffff;
 }
