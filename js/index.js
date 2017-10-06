@@ -2,7 +2,6 @@
 
 function main(){
 	yearDropDown();
-	//openCity(event, "signIn");
 	document.getElementById("defaultOpen").click();
 }
 
@@ -39,4 +38,36 @@ function openCity(evt, cityName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+}
+
+function signIn(){
+    var email = document.getElementById("signinemail").value;
+    var password = document.getElementById("signinpassword").value;
+    if (email.length == 0 || password.length == 0 || !email.includes("@alumni.uwosh.edu")) {
+        document.getElementById("errormessage").innerHTML="Invalid username or password.";
+        return false;
+    }
+    else{//check fields. ajax
+        
+    }
+    return true;
+}
+
+function register(){
+    var firstname = document.getElementById("firstname").value;
+    var lastname = document.getElementById("lastname").value;
+    var email = document.getElementById("registeremail").value;
+    var password = document.getElementById("registerpassword").value;
+    var confirmpassword = document.getElementById("confirmpassword").value;
+    if (firstname.length == 0 || lastname.length == 0 || 
+        !email.includes("@alumni.uwosh.edu") ||
+        email.length == 0 || password.length == 0 ||
+        confirmpassword.length == 0) {
+        document.getElementById("registererrormessage").innerHTML="Please accurately fill out all forms.";
+        return false;
+    }
+    else{//check fields. ajax
+        
+    }
+    return true;
 }

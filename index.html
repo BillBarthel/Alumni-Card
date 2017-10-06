@@ -22,21 +22,22 @@
 
 <div id="signIn" class="tabcontent">
 
-    <form action="php/signIn.php" method="post" class="log-in">
+    <form action="php/signIn.php" method="post" class="log-in" onsubmit="return signIn()">
     	<table align="center">
-    		<tr><td>Email:</td><td><input type="text" name="email"></td></tr>
-    		<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
+    		<tr><td>Email:</td><td><input type="text" name="email" id="signinemail"></td></tr>
+    		<tr><td>Password:</td><td><input type="password" name="password" id="signinpassword"></td></tr>
 		</table>
-		<input id="button" type="submit" name="signin" id="submit" value="Sign In">
+		<input id="button" type="submit" name="signin" id="submit" value="Sign In"><br>
+		<span id="errormessage"></span>
 	</form>
 </div>
 
 <div id="register" class="tabcontent">
 
-	<form action="php/register.php" method="post">
+	<form action="php/register.php" method="post"" class="log-in" onsubmit="return register()">
 		
-    	First Name:<input type="text" name="firstName">
-    	Last Name:<input type="text" name="lastName"><br><br>
+    	First Name:<input type="text" name="firstName" id="firstname">
+    	Last Name:<input type="text" name="lastName" id="lastname"><br><br>
     	College Attended:
     	<select name="collegeAttended">
   			<option value="College of Business">College of Business</option>
@@ -49,11 +50,12 @@
   						</select><br><br>
 			
 		<table align="center">
-    		<tr><td>Email:</td><td><input type="text" name="email"></td></tr>
-    		<tr><td>Password:</td><td><input type="password" name="password"></td></tr>
-    		<tr><td>Re-enter Password:</td><td><input type="password" name="confirmPassword"></td></tr>
+    		<tr><td>Email:</td><td><input type="text" name="email" id="registeremail"></td></tr>
+    		<tr><td>Password:</td><td><input type="password" name="password" id="registerpassword"></td></tr>
+    		<tr><td>Re-enter Password:</td><td><input type="password" name="confirmPassword" id="confirmpassword"></td></tr>
 		</table>	
-  		<input id="button" type="submit" name="register" value="Register">
+  		<input id="button" type="submit" name="Register" value="Register"><br>
+  		<span id="registererrormessage"></span>
 	</form>
 </div>
 	
