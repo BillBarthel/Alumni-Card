@@ -59,10 +59,16 @@ if(trim($firstName) == false ||
 			$sql = "SELECT AlumnusID FROM registered_alumni WHERE Email = '$email'";
 			$result = $conn->query($sql);
 			$row = $result->fetch_assoc();
-			$alumnusID = $row["AlumnusID"];
 
 			//initialize session variables
-			$_SESSION["alumnusid"] = $alumnusID;
+			$id = $row["AlumnusID"];
+			$idLength = strlen(strval($id));
+			$numPaddedZeros = 7 - $idLength;
+			for ($i=0; $i <$numPaddedZeros ; $i++) { 
+				$paddedId = $paddedId . "0";
+			}
+			$paddedId .= strval($id);
+			$_SESSION["alumnusid"] = $paddedId;
 			$_SESSION["username"] = $checkEmail[0];
 			$_SESSION['email'] = $email;
 			$_SESSION["firstname"] = $firstName;
