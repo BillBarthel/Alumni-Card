@@ -7,17 +7,15 @@ $email = $_SESSION['email'];
 $backgroundImage = $_SESSION['background'] = $_POST["background"];
 
 $servername = "localhost";
-$database = "alumni_card";
-$username = "root";
-$dbpassword = "";
+$database = "id2980768_alumnicard";
+$username = "id2980768_admin";
+$dbpassword = "Remember12";
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 
 if(!$conn){
 	die("Connection failed : " . mysqli_connect_error());
 } else {
 	//Change alumni card background if different from default
-	echo $backgroundImage;
-	echo $email;
 	if($backgroundImage != 1){
 		$sql = "UPDATE registered_alumni SET BackgroundImage='$backgroundImage' WHERE Email = '$email'";
 		$conn->query($sql);

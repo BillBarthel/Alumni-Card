@@ -43,8 +43,8 @@ function openCity(evt, cityName) {
 function signIn(){
     var email = document.getElementById("signinemail").value;
     var password = document.getElementById("signinpassword").value;
-    if (email.length == 0 || password.length == 0 || !email.includes("@alumni.uwosh.edu")) {
-        document.getElementById("errormessage").innerHTML="Invalid username or password.";
+    if (email.length == 0 || !email.includes("@")) {
+        document.getElementById("errormessage").innerHTML="Invalid email.";
         return false;
     }
     else{//check fields. ajax

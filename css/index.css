@@ -42,7 +42,7 @@ div.tab {
     margin: 100px auto auto auto;
     overflow: hidden;
     text-align: center;
-    width: 625px;
+    width: 825px;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-bottom: none;
@@ -78,7 +78,7 @@ div.tab button.active {
     float: center;
     background-color: #ffc72c;
     display: none;
-    width: 625px;
+    width: 825px;
     height: 350px;
     padding: 6px 12px;
     border: 1px solid #ccc;

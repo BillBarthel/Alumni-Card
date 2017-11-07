@@ -14,7 +14,8 @@ else
 if(strpos($_SESSION["collegeattended"], "AND") !== false)
 	$collegeAttended = explode("AND", $_SESSION["collegeattended"]);
 
-$alumnphoto = $_SESSION['alumnphoto']
+$alumnphoto = $_SESSION['alumnphoto'];
+
 ?>
 
 <!DOCTYPE html>
@@ -22,8 +23,6 @@ $alumnphoto = $_SESSION['alumnphoto']
 <head>
 	<title>Alumni Titan card</title>
 	<link rel="stylesheet" type="text/css" href="../css/alumnicard.css">
-	<script src="js/alumnicard.js" type="text/javascript"></script>
-  <noscript><p>This page requires javaScript to run correctly!</p></noscript>
 </head>
 <body>
 
@@ -35,7 +34,9 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php if($backgroundImage == 1)://clash ?>
 <div class="clashbackground" id="alumnicard">
 	<div class="clash-center-left">
+    <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
 		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+    <?php } ?>
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -80,7 +81,9 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php elseif($backgroundImage == 2)://COB ?>
 <div class="cobbackground" id="alumnicard">
 	<div class="cob-center-left">
-		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+		<?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
+    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+    <?php } ?>
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -125,7 +128,9 @@ $alumnphoto = $_SESSION['alumnphoto']
 <?php else://Scape ?>
 <div class="scapebackground" id="alumnicard">
 	<div class="scape-center-left">
-		<img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" height="175px" width="150"/>
+		<?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
+    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+    <?php } ?>
 	</div>
 
 	<table style="width:80%" class="bottom-left">
@@ -171,12 +176,14 @@ $alumnphoto = $_SESSION['alumnphoto']
 <div id="upload">
   <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="submit">
+    <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">
+    
+    <input type="submit" value="Save Profile Picture" name="submit">
+    <input type="submit" value="Remove Profile Picture" name="removephoto">
 </form>
 <br>
 <form id="logout" action="logout.php" method="post" enctype="multipart/form-data">
-    <input onclick="updatePhoto()" id="button" type="submit" value="Log Out" name="logout">
+    <input id="button" type="submit" value="Log Out" name="logout">
 </form>
 </div>
 
