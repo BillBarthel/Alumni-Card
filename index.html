@@ -5,7 +5,7 @@
 	<title>Alumni Login</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<script src="js/index.js" type="text/javascript"></script>
-	<noscript><p>This page requires javaScript to run correctly!</p></noscript>
+	<noscript>This page requires javaScript to run correctly!</noscript>
 </head>
 
 <body onload="main()">
@@ -26,17 +26,16 @@
     	<table align="center">
     		<tr><td>Email:</td><td><input type="text" name="email" id="signinemail"></td></tr>
 		</table>
-		<input id="button" type="submit" name="signin" id="submit" value="Sign In"><br>
+		<input id="button" type="submit" name="signin" value="Sign In"><br>
 		<span id="errormessage"></span>
 	</form>
 </div>
 
 <div id="register" class="tabcontent">
 
-	<form action="php/register.php" method="post"" class="log-in" onsubmit="return register()">
-		
+	<form action="php/register.php" method="post" class="log-in" onsubmit="return register()">
     	*First Name:<input type="text" name="firstName" id="firstname">
-    	*Middle Name:<input type="text" name="middleName" id="middleName">
+    	Middle Name:<input type="text" name="middleName" id="middleName">
     	*Last Name:<input type="text" name="lastName" id="lastname"><br><br>
     	*College Attended:
     	<select name="collegeAttended">
@@ -48,7 +47,7 @@
 		*Graduation Year:<select id="yearDropDown" class="" name="graduationYear" 
   						        style="width: 70px; display:inline-block;" value="">   	
   						</select><br><br>
-		*Email:<input type="text" name="email" id="email">
+		*Email:<input type="text" name="email" id="registeremail">
 		Phone Number:<input type="text" name="phoneNumber" id="phoneNumber"><br><br>
 		Mailing Address:<input type="text" name="mailingAddress" id="mailingAddress">
 		City:<input type="text" name="city" id="city"><br><br>
@@ -57,7 +56,7 @@
 		Fields marked with an * are required.<br><br>
 		
 
-  		<input id="button" type="submit" name="Register" value="Register"><br>
+  		<input id="button" type="submit" name="Register" value="Register"><br><br>
   		<span id="registererrormessage"></span>
 	</form>
 </div>

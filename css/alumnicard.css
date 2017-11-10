@@ -46,27 +46,27 @@ td{
 
 .clashbackground {
     position: relative;
-    background-size: 600px 400px;
-    height: 400px;
-    width: 600px;
+    background-size: 800px 480px;
+    height: 480px;
+    width: 800px;
     background-repeat: no-repeat;
     background-image: url("../Images/TitanCardBackgrounds/ClashAlumniCardTemplate.jpg");
 }
 
 .cobbackground {
     position: relative;
-    background-size: 600px 400px;
-    height: 400px;
-    width: 600px;
+    background-size: 800px 480px;
+    height: 480px;
+    width: 800px;
     background-repeat: no-repeat;
     background-image: url("../Images/TitanCardBackgrounds/COBAlumniCardTemplate.jpg");
 }
 
 .scapebackground {
     position: relative;
-    background-size: 600px 400px;
-    height: 400px;
-    width: 600px;
+    background-size: 800px 480px;
+    height: 480px;
+    width: 800px;
     background-repeat: no-repeat;
     background-image: url("../Images/TitanCardBackgrounds/ScapeAlumniCardTemplate.jpg");
 }
