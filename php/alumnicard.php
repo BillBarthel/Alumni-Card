@@ -182,8 +182,9 @@ $alumnphoto = $_SESSION['alumnphoto'];
     <input type="submit" value="Save Profile Picture" name="submit" id="save" >
     <input type="submit" value="Remove Profile Picture" name="removephoto" id="remove" >
 </form>
-<br><br>
-<span id="photoerror"></span>
+<br>
+<span id="photoerror"><?php echo $_SESSION['photoerror']; ?></span>
+<br>
 <br>
 <form id="logout" action="logout.php" method="post" enctype="multipart/form-data">
     <input id="button" type="submit" value="Log Out" name="logout">

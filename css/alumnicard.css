@@ -23,6 +23,7 @@ body {
     border: none;
     padding: 14px 40px;
     border-radius: 12px;
+    font-size: 14pt;
 }
 
 #button:hover{
@@ -85,7 +86,7 @@ td{
     color: white;
     position: absolute;
     text-align: left;
-    font-size: 12pt; 
+    font-size: 14pt; 
     bottom: 12px;
     left: 24px;
 }
@@ -119,22 +120,27 @@ td{
     transform: translate(-50%, -50%);
 }
 
+/* Profile picture position */
 .clash-center-left{
     position: absolute;
-    left: 16px;
+    left: 32px;
     top: 17%;
 }
 
 .cob-center-left{
     position: absolute;
-    left: 36px;
+    left: 57px;
     top: 22%;
 }
 
 .scape-center-left{
     position: absolute;
-    left: 16px;
+    left: 48px;
     top: 30%;
+}
+
+.photo-options{
+    font-size: 14pt;
 }
 
 #profilephoto{
