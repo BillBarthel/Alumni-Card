@@ -24,7 +24,10 @@
 
     <form action="php/signIn.php" method="post" class="log-in" onsubmit="return signIn()">
     	<table align="center">
-    		<tr><td>Email:</td><td><input type="text" name="email" id="signinemail"></td></tr>
+    		<tr>
+    			<td>Email:</td>
+    			<td><input type="text" name="email" id="signinemail"></td>
+    		</tr>
 		</table>
 		<input id="button" type="submit" name="signin" value="Sign In"><br>
 		<span id="errormessage"></span>
@@ -34,31 +37,60 @@
 <div id="register" class="tabcontent">
 
 	<form action="php/register.php" method="post" class="log-in" onsubmit="return register()">
-    	*First Name:<input type="text" name="firstName" id="firstname">
-    	Middle Name:<input type="text" name="middleName" id="middleName">
-    	*Last Name:<input type="text" name="lastName" id="lastname"><br><br>
-    	*College Attended:
-    	<select name="collegeAttended">
-  			<option value="College of Business">College of Business</option>
-  			<option value="College of Education and Human Services">College of Education and Human Services</option>
- 			<option value="College of Letters and Science">College of Letters and Science</option>
-  			<option value="College of Nursing">College of Nursing</option>
-		</select>
-		*Graduation Year:<select id="yearDropDown" class="" name="graduationYear" 
-  						        style="width: 70px; display:inline-block;" value="">   	
-  						</select><br><br>
-		*Email:<input type="text" name="email" id="registeremail">
-		Phone Number:<input type="text" name="phoneNumber" id="phoneNumber"><br><br>
-		Mailing Address:<input type="text" name="mailingAddress" id="mailingAddress">
-		City:<input type="text" name="city" id="city"><br><br>
-		State/Province:<input type="text" name="state" id="state">
-		Zip Code:<input type="text" name="zipCode" id="zipCode"><br><br>
-		Fields marked with an * are required.<br><br>
-		
+    	
+  		<table align="center">
+			<tr>
+    			<td>*College Attended:</td>
+    			<td>
+    				<select name="collegeAttended">
+  						<option value="College of Business">College of Business</option>
+  						<option value="College of Education and Human Services">College of Education and Human Services</option>
+ 						<option value="College of Letters and Science">College of Letters and Science</option>
+  						<option value="College of Nursing">College of Nursing</option>
+					</select>
+				</td> 
+    			<td>*Graduation Year:</td>
+    			<td><select id="yearDropDown" name="graduationYear" 
+  						    style="width: 95%; display:inline-block;">   	
+  					</select>
+  				</td>
+  			</tr>
+  			<tr>
+    			<td >*First Name:</td>
+    			<td ><input type="text" name="firstName" id="firstname"></td>
+  			</tr>
+  			<tr>
+   				<td >*Last Name:</td>
+    			<td ><input type="text" name="lastName" id="lastname"></td>
+  			</tr>	
+  			<tr>
+    			<td>*Email:</td>
+    			<td ><input type="text" name="email" id="registeremail"></td> 
+  			</tr>
+  			<tr>
+    			<td>Mailing Address:</td>
+    			<td><input type="text" name="mailingAddress" id="mailingAddress"></td> 
+  			</tr>
 
+  			<tr>
+    			<td>City:</td>
+    			<td><input type="text" name="city" id="city"></td> 
+    			<td>State/Province:</td>
+    			<td><input type="text" name="state" id="state"></td>
+  			</tr>
+  			<tr>
+    			<td>Zip:</td>
+    			<td><input type="text" name="zipCode" id="zipCode"></td> 
+    			<td>Phone</td>
+    			<td><input type="text" name="phoneNumber" id="phoneNumber"></td>
+  			</tr>
+		</table>		
+
+		Fields marked with an * are required.<br><br>
   		<input id="button" type="submit" name="Register" value="Register"><br><br>
   		<span id="registererrormessage"></span>
 	</form>
+	
 </div>
 	
 </body>

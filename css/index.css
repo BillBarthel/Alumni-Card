@@ -13,6 +13,7 @@
     background-color: white;
     transition-duration: 0.4s;
     border: none;
+    font-size: 14pt;
     padding: 14px 40px;
     border-radius: 12px;
 }
@@ -35,6 +36,10 @@ td{
 
 input, select{
     padding: 5px;
+}
+
+input[type=text] {
+    width: 95%;
 }
 
 /* Style the tab */
@@ -73,13 +78,14 @@ div.tab button.active {
 
 /* Style the tab content */
 .tabcontent {
+    font-size: 14pt;
     text-align: center;
     margin: 0px auto auto auto;
     float: center;
     background-color: #ffc72c;
     display: none;
     width: 825px;
-    height: 350px;
+    height: 450px;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
