@@ -73,6 +73,23 @@ if(trim($firstName) == false ||
 			$_SESSION["collegeattended"] = $collegeAttended;
 			$_SESSION["graduationyear"] = $graduationYear;
 			$_SESSION['alumnphoto'] = "default.jpg";
+/*		
+            //Can't send emails through current, free webhoster. Mail() returns true;
+            
+            $headers = 'From: webmaster@example.com' . "\r\n" .
+                       'Reply-To: webmaster@example.com' . "\r\n" .
+                       'X-Mailer: PHP/' . phpversion();
+
+			$emailMsg = "First Name: " . $firstName . "\n Last Name: " . $lastName .
+						"\n Name at Graduation (If Different): " . $nameatgraduation .
+						"\n Email: " . $email . "\n College Attended: " . $collegeAttended .
+						"\n Graduation Year: " . $graduationYear . 
+						"\n Mailing Address: " . $mailingAddress . "\n City: " . $city .
+						"\n State/Province: " . $state . "\n Zip Code: " . $zipCode .
+						"\n Cell Phone Number: " . $phoneNumber;
+
+			mail("to.email.com", "Alumni Titan Card Registration", $emailMsg);
+*/
 
 			header("Location: ../selectbackground.html");
 		} else {
