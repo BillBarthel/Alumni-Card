@@ -34,11 +34,6 @@ $alumnphoto = $_SESSION['alumnphoto'];
 
 <?php if($backgroundImage == 1)://clash ?>
 <div class="clashbackground" id="alumnicard">
-  <div class="clash-center-left">
-    <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
-    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
-    <?php } ?>
-  </div>
 
   <table style="width:80%" class="bottom-left">
   <?php if(strlen($_SESSION["firstname"] . " " . $_SESSION["lastname"]) > 20)://put first and last names on seperate lines ?>
@@ -81,11 +76,6 @@ $alumnphoto = $_SESSION['alumnphoto'];
 
 <?php elseif($backgroundImage == 2)://COB ?>
 <div class="cobbackground" id="alumnicard">
-  <div class="cob-center-left">
-    <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
-    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
-    <?php } ?>
-  </div>
 
   <table style="width:80%" class="bottom-left">
   <?php if(strlen($_SESSION["firstname"] . " " . $_SESSION["lastname"]) > 20)://put first and last names on seperate lines ?>
@@ -128,11 +118,6 @@ $alumnphoto = $_SESSION['alumnphoto'];
 
 <?php else://Scape ?>
 <div class="scapebackground" id="alumnicard">
-  <div class="scape-center-left">
-    <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
-    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
-    <?php } ?>
-  </div>
 
   <table style="width:80%" class="bottom-left">
   <?php if(strlen($_SESSION["firstname"] . " " . $_SESSION["lastname"]) > 20)://put first and last names on seperate lines ?>
@@ -186,10 +171,18 @@ $alumnphoto = $_SESSION['alumnphoto'];
 <span id="photoerror"><?php echo $_SESSION['photoerror']; ?></span>
 <br>
 <br>
+<div>
+    <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
+    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+    <?php } ?>
+</div>
+<br>
 <form id="logout" action="logout.php" method="post" enctype="multipart/form-data">
     <input id="button" type="submit" value="Log Out" name="logout">
 </form>
 </div>
+<br>
+<br>
 
 </body>
 </html>

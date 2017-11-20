@@ -17,18 +17,7 @@ if(isset($_POST["submit"])) {
         header("Location: alumnicard.php");
         exit();
     }
-
-	// Check if file already exists
-	//Probably delete this.
-	//With username as the photo name every
-	//photo name will be unique
 	
-	// Check file size
-	if ($_FILES["fileToUpload"]["size"] > 500000) {
-    	$_SESSION['photoerror'] = "Sorry, your file is too large.";
-    	header("Location: alumnicard.php");
-        exit();
-	}
 	// Allow certain file formats
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 	&& $imageFileType != "gif" ) {

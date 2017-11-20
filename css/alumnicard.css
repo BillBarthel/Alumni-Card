@@ -86,63 +86,11 @@ td{
     color: white;
     position: absolute;
     text-align: left;
-    font-size: 13pt; 
+    font-size: 12pt; 
     bottom: 12px;
     left: 24px;
 }
 
-/* Top left text */
-.top-left {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
-
-/* Top right text */
-.top-right {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-}
-
-/* Bottom right text */
-.bottom-right {
-    position: absolute;
-    bottom: 8px;
-    right: 16px;
-}
-
-/* Centered text */
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Profile picture position */
-.clash-center-left{
-    position: absolute;
-    left: 32px;
-    top: 17%;
-}
-
-.cob-center-left{
-    position: absolute;
-    left: 57px;
-    top: 22%;
-}
-
-.scape-center-left{
-    position: absolute;
-    left: 48px;
-    top: 30%;
-}
-
 .photo-options{
     font-size: 14pt;
-}
-
-#profilephoto{
-    border: 2px solid #021a40
 }
