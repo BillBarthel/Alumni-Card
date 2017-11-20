@@ -48,7 +48,16 @@ function signIn(){
         return false;
     }
     else{//check fields. ajax
-        
+        $.ajax(
+    {
+        url: '../php/signIn.php',
+        type: 'POST',
+        data: {email},
+        success: function(data)
+        {
+            document.getElementById("errormessage").innerHTML=data;
+        }
+    });
     }
     return true;
 }

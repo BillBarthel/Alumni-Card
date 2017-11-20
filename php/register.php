@@ -3,8 +3,8 @@ session_start();
 //double check credentials
 //May look more elegant if put into an array
 $firstName = htmlspecialchars($_POST["firstName"], ENT_QUOTES);
-$middleName = htmlspecialchars($_POST["middleName"], ENT_QUOTES);
 $lastName = htmlspecialchars($_POST["lastName"], ENT_QUOTES);
+$nameatgraduation = htmlspecialchars($_POST["nameatgraduation"], ENT_QUOTES);
 $collegeAttended = htmlspecialchars($_POST["collegeAttended"], ENT_QUOTES);
 $graduationYear = htmlspecialchars($_POST["graduationYear"], ENT_QUOTES);
 $email = htmlspecialchars($_POST["email"], ENT_QUOTES);
@@ -25,7 +25,6 @@ $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 $checkEmail = explode("@", $email);
 
 if(trim($firstName) == false ||
-   trim($middleName) == false ||
    trim($lastName) == false ||
    trim($email) == false){
 		echo "All required fields are not filled.";
@@ -43,14 +42,14 @@ if(trim($firstName) == false ||
 	if($result->num_rows == 0){
 		//Convert inputs to uppercase
 		$firstName = strtoupper($firstName);
-		$middleName = strtoupper($middleName);
 		$lastName = strtoupper($lastName);
+		$nameatgraduation = strtoupper($nameatgraduation);
 		$collegeAttended = strtoupper($collegeAttended);
 
 		$sql = "INSERT INTO registered_alumni (AlumnusID, Email, 
-							FirstName, MiddleName, LastName, CollegeAttended, GraduationYear, MailingAddress, City, State, ZipCode, PhoneNumber) 
-							VALUES ('', '$email', '$firstName', '$middleName',
-							'$lastName', '$collegeAttended', '$graduationYear', '$mailingAddress', '$city', '$state', '$zipCode', '$phoneNumber')";
+							FirstName, LastName, NameAtGraduation, CollegeAttended, GraduationYear, MailingAddress, City, State, ZipCode, PhoneNumber) 
+							VALUES ('', '$email', '$firstName',
+							'$lastName','$nameatgraduation', '$collegeAttended', '$graduationYear', '$mailingAddress', '$city', '$state', '$zipCode', '$phoneNumber')";
 
 		if (mysqli_query($conn, $sql)) {
 			//Get newly registered AlumnusID to display on alumnicard.php
@@ -82,6 +81,7 @@ if(trim($firstName) == false ||
 		}
 	} else {
 		//Does this give away too much information?
+		header("Location: ../index.html");
 		echo "Email already registered.";
 	}
 }
