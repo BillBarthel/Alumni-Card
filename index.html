@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Alumni Login</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
-	<script src="js/index.js" type="text/javascript"></script>
-	<noscript>This page requires javaScript to run correctly!</noscript>
-</head>
+  <meta charset="UTF-8">
+  <title>Alumni Login</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+  <script src="js/index.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <noscript>This page requires JavaScript to run correctly!</noscript>
+/>
 
 <body onload="main()">
 
 <div class="header">
-	<img id="background" src="Images/Other/Gradiant.jpg" alt="loginBanner.jpg" width="100%" height="150px">
-	<img id="forground" src="Images/Other/Logo.png" alt="loginBanner.jpg" height="150px">
+  <img id="background" src="Images/Other/Gradiant.jpg" alt="loginBanner.jpg" width="100%" height="150px">
+  <img id="forground" src="Images/Other/Logo.png" alt="loginBanner.jpg" height="150px">
 </div>
 
 <div class="tab">
@@ -22,81 +24,77 @@
 
 <div id="signIn" class="tabcontent">
 
-    <form action="php/signIn.php" method="post" class="log-in" onsubmit="return signIn()">
-    	<table align="center">
-    		<tr>
-    			<td>Email:</td>
-    			<td><input type="text" name="email" id="signinemail"></td>
-    		</tr>
-		</table>
-		<input id="button" type="submit" name="signin" value="Sign In"><br><br>
-		<span id="errormessage"></span>
-	</form>
+    <table align="center">
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" name="email" id="signinemail"></td>
+      </tr>
+  </table>
+  <br>
+  <input id="button" type="submit" name="signin" onclick="signIn()" value="Sign In"><br><br>
+  <span id="errormessage"></span>
 </div>
 
 <div id="register" class="tabcontent">
+      
+      <table align="center">
+      <tr>
+          <td>*College Attended:</td>
+          <td>
+            <select name="collegeAttended" id="collegeAttended">
+              <option value="College of Business">College of Business</option>
+              <option value="College of Education and Human Services">College of Education and Human Services</option>
+            <option value="College of Letters and Science">College of Letters and Science</option>
+              <option value="College of Nursing">College of Nursing</option>
+              <option value="Lifelong Learning & Community Engagement">Lifelong Learning & Community Engagement</option>
+          </select>
+        </td> 
+          <td>*Graduation Year:</td>
+          <td><select id="yearDropDown" name="graduationYear" 
+                  style="width: 95%; display:inline-block;">    
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td >*First Name:</td>
+          <td ><input type="text" name="firstName" id="firstname"></td>
+        </tr>
+        <tr>
+          <td >*Last Name:</td>
+          <td ><input type="text" name="lastName" id="lastname"></td>
+        </tr> 
+        <tr>
+          <td >Name at Graduation: <br> (If different)</td>
+          <td ><input type="text" name="nameatgraduation" id="nameatgraduation"></td>
+        </tr>
+        <tr>
+          <td>*Email:</td>
+          <td ><input type="text" name="email" id="registeremail"></td> 
+        </tr>
+        <tr>
+          <td>Mailing Address:</td>
+          <td><input type="text" name="mailingAddress" id="mailingAddress"></td> 
+        </tr>
 
-	<form action="php/register.php" method="post" class="log-in" onsubmit="return register()">
-    	
-  		<table align="center">
-			<tr>
-    			<td>*College Attended:</td>
-    			<td>
-    				<select name="collegeAttended">
-  						<option value="College of Business">College of Business</option>
-  						<option value="College of Education and Human Services">College of Education and Human Services</option>
- 						<option value="College of Letters and Science">College of Letters and Science</option>
-  						<option value="College of Nursing">College of Nursing</option>
-  						<option value="Lifelong Learning & Community Engagement">Lifelong Learning & Community Engagement</option>
-					</select>
-				</td> 
-    			<td>*Graduation Year:</td>
-    			<td><select id="yearDropDown" name="graduationYear" 
-  						    style="width: 95%; display:inline-block;">   	
-  					</select>
-  				</td>
-  			</tr>
-  			<tr>
-    			<td >*First Name:</td>
-    			<td ><input type="text" name="firstName" id="firstname"></td>
-  			</tr>
-  			<tr>
-   				<td >*Last Name:</td>
-    			<td ><input type="text" name="lastName" id="lastname"></td>
-  			</tr>	
-  			<tr>
-   				<td >Name at Graduation: <br> (If different)</td>
-    			<td ><input type="text" name="nameatgraduation" id="nameatgraduation"></td>
-  			</tr>
-  			<tr>
-    			<td>*Email:</td>
-    			<td ><input type="text" name="email" id="registeremail"></td> 
-  			</tr>
-  			<tr>
-    			<td>Mailing Address:</td>
-    			<td><input type="text" name="mailingAddress" id="mailingAddress"></td> 
-  			</tr>
+        <tr>
+          <td>City:</td>
+          <td><input type="text" name="city" id="city"></td> 
+          <td>State/Province:</td>
+          <td><input type="text" name="state" id="state"></td>
+        </tr>
+        <tr>
+          <td>Zip Code:</td>
+          <td><input type="text" name="zipCode" id="zipCode"></td> 
+          <td>Cell Phone:</td>
+          <td><input type="text" name="phoneNumber" id="phoneNumber"></td>
+        </tr>
+    </table>    
 
-  			<tr>
-    			<td>City:</td>
-    			<td><input type="text" name="city" id="city"></td> 
-    			<td>State/Province:</td>
-    			<td><input type="text" name="state" id="state"></td>
-  			</tr>
-  			<tr>
-    			<td>Zip Code:</td>
-    			<td><input type="text" name="zipCode" id="zipCode"></td> 
-    			<td>Cell Phone:</td>
-    			<td><input type="text" name="phoneNumber" id="phoneNumber"></td>
-  			</tr>
-		</table>		
-
-		Fields marked with an * are required.<br><br>
-  		<input id="button" type="submit" name="Register" value="Register"><br><br>
-  		<span id="registererrormessage"></span>
-	</form>
-	
+    Fields marked with an * are required.<br><br>
+      <input id="button" type="submit" name="Register" onclick="register()" value="Register"><br><br>
+      <span id="registererrormessage"></span>
+  
 </div>
-	
+
 </body>
 </html>

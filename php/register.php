@@ -91,7 +91,8 @@ if(trim($firstName) == false ||
 			mail("to.email.com", "Alumni Titan Card Registration", $emailMsg);
 */
 
-			header("Location: ../selectbackground.html");
+			//header("Location: ../selectbackground.html");
+			echo "success";
 		} else {
 			echo "Somthing went wrong. Cannot register at this time.";
     		echo "Error: " . $sql . "<br>" . mysqli_error($conn);

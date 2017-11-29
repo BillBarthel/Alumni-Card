@@ -1,16 +1,16 @@
 "use strict"
 
 function main(){
-	yearDropDown();
-	document.getElementById("defaultOpen").click();
+    yearDropDown();
+    document.getElementById("defaultOpen").click();
 }
 
 function yearDropDown(){
-	var currentYear = new Date().getFullYear();
+    var currentYear = new Date().getFullYear();
     var option = "";
     for (var year = currentYear ; year >= currentYear-100; year--) {
       
-        var option = document.createElement("option");
+        option = document.createElement("option");
         option.text = year;
         option.value = year;
         
@@ -42,41 +42,56 @@ function openCity(evt, cityName) {
 
 function signIn(){
     var email = document.getElementById("signinemail").value;
-    var password = document.getElementById("signinpassword").value;
-    if (email.length == 0 || !email.includes("@")) {
-        document.getElementById("errormessage").innerHTML="Invalid email.";
-        return false;
-    }
-    else{//check fields. ajax
-        $.ajax(
+    $.ajax(
     {
-        url: '../php/signIn.php',
+        url: './php/signIn.php',
         type: 'POST',
-        data: {email},
+        data: {email: email},
         success: function(data)
         {
-            document.getElementById("errormessage").innerHTML=data;
+            if(data == "success"){
+                window.location.href = './php/alumnicard.php';
+            }else{
+                document.getElementById("errormessage").innerHTML=data;
+            }
         }
     });
-    }
-    return true;
 }
 
 function register(){
     var firstname = document.getElementById("firstname").value;
     var lastname = document.getElementById("lastname").value;
     var email = document.getElementById("registeremail").value;
-    var password = document.getElementById("registerpassword").value;
-    var confirmpassword = document.getElementById("confirmpassword").value;
-    if (firstname.length == 0 || lastname.length == 0 || 
-        !email.includes("@alumni.uwosh.edu") ||
-        email.length == 0 || password.length == 0 ||
-        confirmpassword.length == 0) {
+    var collegeAttended = document.getElementById("collegeAttended").value;
+    var nameatgraduation = document.getElementById("nameatgraduation").value;
+    var graduationYear = document.getElementById("yearDropDown").value;
+    var mailingAddress = document.getElementById("mailingAddress").value;
+    var city = document.getElementById("city").value;
+    var state = document.getElementById("state").value;
+    var zipCode = document.getElementById("zipCode").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    
+    if (firstname.length === 0 || lastname.length === 0 || 
+        !email.includes("@") || email.length === 0) {
         document.getElementById("registererrormessage").innerHTML="Please accurately fill out all forms.";
-        return false;
     }
     else{//check fields. ajax
-        
+        $.ajax(
+        {
+            url: './php/register.php',
+            type: 'POST',
+            data: {email: email, firstName:firstname, lastName:lastname,
+                   collegeAttended:collegeAttended, nameatgraduation:nameatgraduation,
+                   mailingAddress:mailingAddress, graduationYear:graduationYear,
+                   city:city, state:state, zipCode:zipCode, phoneNumber:phoneNumber},
+            success: function(data)
+            {
+              if(data == "success"){
+                  window.location.href = './selectbackground.html';
+              }else{
+                 document.getElementById("registererrormessage").innerHTML=data;
+              }
+            }
+        });
     }
-    return true;
 }

@@ -44,7 +44,7 @@ input[type=text] {
 
 /* Style the tab */
 div.tab {
-    margin: 100px auto auto auto;
+    margin: 50px auto auto auto;
     overflow: hidden;
     text-align: center;
     width: 825px;
@@ -85,7 +85,7 @@ div.tab button.active {
     background-color: #ffc72c;
     display: none;
     width: 825px;
-    height: 475px;
+    height: 525px;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;

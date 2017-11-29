@@ -37,9 +37,10 @@ if($result->num_rows == 1){
 	//$_SESSION['qrcode'] = $row["QRCode"];
 	$_SESSION['alumnphoto'] = $row["AlumnPhoto"];
 	$_SESSION['background'] = $row["BackgroundImage"];
-	header("Location: alumnicard.php");
+	//header("Location: alumnicard.php");
+	echo "success";
 }else{
-	echo "Invalid username or password.";
+	echo "Invalid email.";
 	die();
 }
 
