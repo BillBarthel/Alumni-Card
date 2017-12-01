@@ -69,6 +69,18 @@ if(trim($firstName) == false ||
 			$paddedId .= strval($id);
 			$username = $checkEmail[0];
 			//$qrcode = $row["QRCode"];
+			
+			$headers = 'From: admin@uwoalumnicard.xyz' . "\r\n";
+			$emailMsg = " First Name: " . $firstName . "\n Last Name: " . $lastName .
+						"\n Name at Graduation (If Different): " . $nameatgraduation .
+						"\n Email: " . $email . "\n College Attended: " . $collegeAttended .
+						"\n Graduation Year: " . $graduationYear . 
+						"\n Mailing Address: " . $mailingAddress . "\n City: " . $city .
+						"\n State/Province: " . $state . "\n Zip Code: " . $zipCode .
+						"\n Cell Phone Number: " . $phoneNumber;
+
+			mail("barthw52@uwosh.edu", "Alumni Titan Card Registration", $emailMsg);
+			
 			echo "success-".$paddedId.",".$email.",".$username.",".$firstName.",".$lastName.",".$collegeAttended.",".$graduationYear.",default.jpg";
 		} else {
 			echo "Somthing went wrong. Cannot register at this time. " .$graduationName."hfjh";
