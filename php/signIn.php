@@ -4,9 +4,9 @@ session_start();
 $email = htmlspecialchars($_POST["email"], ENT_QUOTES);
 
 $servername = "localhost";
-$database = "id2980768_alumnicard";
-$username = "id2980768_admin";
-$dbpassword = "Remember12";
+$database = "u708549243_uwoac";
+$username = "u708549243_admin";
+$dbpassword = "S5mKwWvjJay9";
 
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 if(!$conn){

@@ -15,9 +15,9 @@ $zipCode = htmlspecialchars($_POST["zipCode"], ENT_QUOTES);
 $phoneNumber = htmlspecialchars($_POST["phoneNumber"], ENT_QUOTES);
 
 $servername = "localhost";
-$database = "id2980768_alumnicard";
-$username = "id2980768_admin";
-$dbpassword = "Remember12";
+$database = "u708549243_uwoac";
+$username = "u708549243_admin";
+$dbpassword = "S5mKwWvjJay9";
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 
 //Verifies that the tail of the submitted email is an
@@ -73,14 +73,12 @@ if(trim($firstName) == false ||
 			$_SESSION["collegeattended"] = $collegeAttended;
 			$_SESSION["graduationyear"] = $graduationYear;
 			$_SESSION['alumnphoto'] = "default.jpg";
-/*		
+	
             //Can't send emails through current, free webhoster. Mail() returns true;
             
-            $headers = 'From: webmaster@example.com' . "\r\n" .
-                       'Reply-To: webmaster@example.com' . "\r\n" .
-                       'X-Mailer: PHP/' . phpversion();
+            $headers = 'From: admin@uwoalumnicard.xyz' . "\r\n";
 
-			$emailMsg = "First Name: " . $firstName . "\n Last Name: " . $lastName .
+			$emailMsg = " First Name: " . $firstName . "\n Last Name: " . $lastName .
 						"\n Name at Graduation (If Different): " . $nameatgraduation .
 						"\n Email: " . $email . "\n College Attended: " . $collegeAttended .
 						"\n Graduation Year: " . $graduationYear . 
@@ -88,8 +86,7 @@ if(trim($firstName) == false ||
 						"\n State/Province: " . $state . "\n Zip Code: " . $zipCode .
 						"\n Cell Phone Number: " . $phoneNumber;
 
-			mail("to.email.com", "Alumni Titan Card Registration", $emailMsg);
-*/
+			mail("barthw52@uwosh.edu", "Alumni Titan Card Registration", $emailMsg);
 
 			//header("Location: ../selectbackground.html");
 			echo "success";
