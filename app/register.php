@@ -81,7 +81,20 @@ if(trim($firstName) == false ||
 
 			mail("barthw52@uwosh.edu", "Alumni Titan Card Registration", $emailMsg);
 			
-			echo "success-".$paddedId.",".$email.",".$username.",".$firstName.",".$lastName.",".$collegeAttended.",".$graduationYear.",default.jpg";
+			$myObj->firstname = $firstName;
+		    $myObj->lastname = $lastName;
+		    $myObj->collegeattended = $collegeAttended;
+			$myObj->paddedId = $paddedId;
+		    $myObj->email = $email;
+		    $myObj->username = $checkEmail[0];
+		    $myObj->graduationyear = $graduationYear;
+		    //$myObj->qrcode = $row["QRCode"];
+		    $myObj->alumnphoto = "default.jpg";
+
+		    $myJSON = json_encode($myObj);
+
+		    echo $myJSON;
+		    
 		} else {
 			echo "Somthing went wrong. Cannot register at this time. " .$graduationName."hfjh";
     		echo "Error: " . $sql . "<br>" . mysqli_error($conn);

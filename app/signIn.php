@@ -18,26 +18,29 @@ if($result->num_rows == 0){
 	echo ".".$email.".";//echo "invalid email.";
 }else{
 	$row = $result->fetch_assoc();
+	$id = $row["AlumnusID"];
+	$idLength = strlen(strval($id));
+	$numPaddedZeros = 7 - $idLength;
+	$paddedId = "";
+	for ($i=0; $i <$numPaddedZeros ; $i++) { 
+		$paddedId = $paddedId . "0";
+	}
+	$paddedId .= strval($id);
+	$myObj->paddedId = $paddedId;
+	$myObj->email = $email;
+	$checkEmail = explode("@", $email);
+	$myObj->username = $checkEmail[0];
+	$myObj->firstname = $row["FirstName"];
+	$myObj->lastname = $row["LastName"];
+	$myObj->collegeattended = $row["CollegeAttended"];
+	$myObj->graduationyear = $row["GraduationYear"];
+	//$myObj->qrcode = $row["QRCode"];
+	$myObj->alumnphoto = $row["AlumnPhoto"];
+	$myObj->background = $row["BackgroundImage"];
 
-		$id = $row["AlumnusID"];
-		$idLength = strlen(strval($id));
-		$numPaddedZeros = 7 - $idLength;
-		$paddedId = "";
-		for ($i=0; $i <$numPaddedZeros ; $i++) { 
-			$paddedId = $paddedId . "0";
-		}
-		$paddedId .= strval($id);
-		$checkEmail = explode("@", $email);
-		$username = $checkEmail[0];
-		$firstname = $row["FirstName"];
-		$lastname = $row["LastName"];
-		$collegeattended = $row["CollegeAttended"];
-		$graduationyear = $row["GraduationYear"];
-		//$qrcode = $row["QRCode"];
-		$alumnphoto = $row["AlumnPhoto"];
-		$background = $row["BackgroundImage"];
-		echo "success-".$paddedId.",".$email.",".$username.",".$firstname.",".$lastname.",".$collegeattended.",".$graduationyear.",".$alumnphoto.",".$background;
-	
+	$myJSON = json_encode($myObj);
+
+	echo $myJSON;
 }
 
 mysqli_close($conn);
