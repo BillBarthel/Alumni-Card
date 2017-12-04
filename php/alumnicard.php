@@ -173,7 +173,7 @@ $alumnphoto = $_SESSION['alumnphoto'];
 <br>
 <div>
     <?php if(strcmp($alumnphoto, "default.jpg")){//clash ?>
-    <img id="alumnphoto" src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="175px" width="150" />
+    <img src="../Images/Uploads/<?php echo $alumnphoto; ?>" id="profilephoto" height="240px" width="160px" />
     <?php } ?>
 </div>
 <br>

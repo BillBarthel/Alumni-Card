@@ -94,3 +94,5 @@ td{
 .photo-options{
     font-size: 14pt;
 }
+
+#profilephoto { max-height: 100%; max-width: 100%; overflow: hidden; }
