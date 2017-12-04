@@ -11,8 +11,13 @@ else if($backgroundImage == 2)
 else
   $img = "ScapeAlumniCardTemplate.jpg";
 
-if(strpos($_SESSION["collegeattended"], "AND") !== false)
+if(strpos($_SESSION["collegeattended"], "LIFELONG") !== false){
   $collegeAttended = explode("AND", $_SESSION["collegeattended"]);
+  $collegeAttended[0] = $collegeAttended[0] . " AND";
+} else if(strpos($_SESSION["collegeattended"], "AND") !== false){
+  $collegeAttended = explode("AND", $_SESSION["collegeattended"]);
+  $collegeAttended[1] =  "AND " . $collegeAttended[1];
+}
 
 $alumnphoto = $_SESSION['alumnphoto'];
 
@@ -59,7 +64,7 @@ $alumnphoto = $_SESSION['alumnphoto'];
         <td rowspan="2"><?php// echo "QR Code"; ?></td>
       </tr>
       <tr>
-        <td><?php echo "AND " . $collegeAttended[1]; ?></td>
+        <td><?php echo $collegeAttended[1]; ?></td>
         <td></td>
       </tr>
     <?php else://display it on one line ?>
@@ -101,7 +106,7 @@ $alumnphoto = $_SESSION['alumnphoto'];
         <td rowspan="2"><?php// echo "QR Code"; ?></td>
       </tr>
       <tr>
-        <td><?php echo "AND " . $collegeAttended[1]; ?></td>
+        <td><?php echo $collegeAttended[1]; ?></td>
         <td></td>
       </tr>
     <?php else://display it on one line ?>
@@ -143,7 +148,7 @@ $alumnphoto = $_SESSION['alumnphoto'];
         <td rowspan="2"><?php// echo "QR Code"; ?></td>
       </tr>
       <tr>
-        <td><?php echo "AND " . $collegeAttended[1]; ?></td>
+        <td><?php echo $collegeAttended[1]; ?></td>
         <td></td>
       </tr>
     <?php else://display it on one line ?>
