@@ -43,6 +43,7 @@ body {
 
 td{
     width: 400px;
+    white-space: nowrap;
 }
 
 .clashbackground {
@@ -87,7 +88,7 @@ td{
     position: absolute;
     text-align: left;
     font-size: 12pt; 
-    bottom: 12px;
+    bottom: 5px;
     left: 24px;
 }
 
@@ -95,4 +96,8 @@ td{
     font-size: 14pt;
 }
 
-#profilephoto { max-height: 100%; max-width: 100%; overflow: hidden; }
+#profilephoto{ 
+    max-height: 100%; 
+    max-width: 100%; 
+    overflow: hidden; 
+}
