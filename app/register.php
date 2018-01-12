@@ -12,9 +12,9 @@ $zipCode = htmlspecialchars($_GET["zipCode"], ENT_QUOTES);
 $phoneNumber = htmlspecialchars($_GET["phoneNumber"], ENT_QUOTES);
 
 $servername = "localhost";
-$database = "u708549243_uwoac";
-$username = "u708549243_admin";
-$dbpassword = "S5mKwWvjJay9";
+$database = "id2980768_alumnicard";
+$username = "id2980768_admin";
+$dbpassword = "Remember12";
 
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 if(!$conn){

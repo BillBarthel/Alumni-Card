@@ -34,9 +34,9 @@ if(isset($_POST["submit"])) {
 	
     $email = $_SESSION['email'];
     $servername = "localhost";
-    $database = "u708549243_uwoac";
-    $username = "u708549243_admin";
-    $dbpassword = "S5mKwWvjJay9";
+	$database = "id2980768_alumnicard";
+	$username = "id2980768_admin";
+	$dbpassword = "Remember12";
     $conn = mysqli_connect($servername, $username, $dbpassword, $database);
     $sql = "UPDATE registered_alumni SET AlumnPhoto = '$newfilename' WHERE Email = '$email'";
     if (mysqli_query($conn, $sql) && move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],
@@ -52,9 +52,9 @@ if(isset($_POST["submit"])) {
 	
 } elseif (isset($_POST["removephoto"])) {
 	$servername = "localhost";
-	$database = "u708549243_uwoac";
-	$username = "u708549243_admin";
-	$dbpassword = "S5mKwWvjJay9";
+	$database = "id2980768_alumnicard";
+	$username = "id2980768_admin";
+	$dbpassword = "Remember12";
 	
 	$con = mysqli_connect($servername, $username, $dbpassword, $database);
 	if(!$con){

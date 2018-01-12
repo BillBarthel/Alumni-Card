@@ -1,9 +1,9 @@
 <?php
 //importing dbDetails file 
 $servername = "localhost";
-$database = "u708549243_uwoac";
-$username = "u708549243_admin";
-$dbpassword = "S5mKwWvjJay9";
+$database = "id2980768_alumnicard";
+$username = "id2980768_admin";
+$dbpassword = "Remember12";
 
 $alumnusid = $_GET["alumnusid"];
 $default = "default.jpg";
