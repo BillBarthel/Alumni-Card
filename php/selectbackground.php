@@ -11,7 +11,7 @@ $database = "id2980768_alumnicard";
 $username = "id2980768_admin";
 $dbpassword = "Remember12";
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
-
+//Connects to the database to save the user's titan alumni card background
 if(!$conn){
 	die("Connection failed : " . mysqli_connect_error());
 } else {

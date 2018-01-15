@@ -15,7 +15,7 @@ $sql = "SELECT * FROM registered_alumni WHERE Email = '$email'";
 $result = $conn->query($sql);
 
 if($result->num_rows == 0){
-	echo ".".$email.".";//echo "invalid email.";
+	echo ".".$email.".";
 }else{
 	$row = $result->fetch_assoc();
 	$id = $row["AlumnusID"];

@@ -1,5 +1,4 @@
 <?php
-//importing dbDetails file 
 $servername = "localhost";
 $database = "id2980768_alumnicard";
 $username = "id2980768_admin";

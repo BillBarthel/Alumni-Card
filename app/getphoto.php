@@ -1,5 +1,5 @@
 <?php
-//importing dbDetails file 
+//Retrive the user's personal photo to be displayed in the app
 $servername = "localhost";
 $database = "id2980768_alumnicard";
 $username = "id2980768_admin";

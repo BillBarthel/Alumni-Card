@@ -70,6 +70,8 @@ if(trim($firstName) == false ||
 			$username = $checkEmail[0];
 			//$qrcode = $row["QRCode"];
 			
+			//Code to send out an email after a new user registers
+			/*
 			$headers = 'From: admin@uwoalumnicard.xyz' . "\r\n";
 			$emailMsg = " First Name: " . $firstName . "\n Last Name: " . $lastName .
 						"\n Name at Graduation (If Different): " . $nameatgraduation .
@@ -80,6 +82,7 @@ if(trim($firstName) == false ||
 						"\n Cell Phone Number: " . $phoneNumber;
 
 			mail("barthw52@uwosh.edu", "Alumni Titan Card Registration", $emailMsg);
+			*/
 			
 			$myObj->firstname = $firstName;
 		    $myObj->lastname = $lastName;
@@ -96,7 +99,7 @@ if(trim($firstName) == false ||
 		    echo $myJSON;
 		    
 		} else {
-			echo "Somthing went wrong. Cannot register at this time. " .$graduationName."hfjh";
+			echo "Somthing went wrong. Cannot register at this time.";
     		echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
 	} else {

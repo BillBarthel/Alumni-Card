@@ -5,6 +5,7 @@ function main(){
     document.getElementById("defaultOpen").click();
 }
 
+//Generate a drop down menu that displays the current year and 100 previous years
 function yearDropDown(){
     var currentYear = new Date().getFullYear();
     var option = "";

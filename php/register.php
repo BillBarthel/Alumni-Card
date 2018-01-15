@@ -20,8 +20,7 @@ $username = "id2980768_admin";
 $dbpassword = "Remember12";
 $conn = mysqli_connect($servername, $username, $dbpassword, $database);
 
-//Verifies that the tail of the submitted email is an
-//UWO alumni email
+//Inferior check for valid email. Does a simple length check 
 $checkEmail = explode("@", $email);
 
 if(trim($firstName) == false ||
@@ -75,7 +74,7 @@ if(trim($firstName) == false ||
 			$_SESSION['alumnphoto'] = "default.jpg";
 	
             //Can't send emails through current, free webhoster. Mail() returns true;
-            
+            /*
             $headers = 'From: admin@uwoalumnicard.xyz' . "\r\n";
 
 			$emailMsg = " First Name: " . $firstName . "\n Last Name: " . $lastName .
@@ -87,6 +86,7 @@ if(trim($firstName) == false ||
 						"\n Cell Phone Number: " . $phoneNumber;
 
 			mail("barthw52@uwosh.edu", "Alumni Titan Card Registration", $emailMsg);
+			*/
 
 			//header("Location: ../selectbackground.html");
 			echo "success";
