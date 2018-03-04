@@ -93,6 +93,7 @@ if(trim($firstName) == false ||
 		    $myObj->graduationyear = $graduationYear;
 		    //$myObj->qrcode = $row["QRCode"];
 		    $myObj->alumnphoto = "default.jpg";
+		    $myObj->background = 1;
 
 		    $myJSON = json_encode($myObj);
 
